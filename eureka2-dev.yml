@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: register-center #注册中心名字
+server:
+  port: 7002 #服务端口
+
+#注册中心相关配置
+eureka:
+  server:
+    enable-self-preservation: true #自我保护机制(心跳机制)
+    eviction-interval-timer-in-ms: 5000 #清理无效节点的时间间隔，默认60000毫秒，即60秒
+  client:
+    register-with-eureka: false #不将自己注册到注册中心
+    fetch-registry: false #不检索服务信息
+    service-url:
+      defaultZone: http://eureka1:7001/eureka/,http://eureka3:7003/eureka/
+  instance:
+    prefer-ip-address: true #机器名标识服务名
+    hostname: localhost
