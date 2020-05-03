@@ -17,3 +17,4 @@ eureka:
   instance:
     prefer-ip-address: true #机器名标识服务名
     hostname: localhost
+    
