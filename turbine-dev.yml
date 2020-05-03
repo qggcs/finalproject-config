@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: turbine
+  profiles:
+    active: dev
+server:
+  port: 9002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:7001/eureka/,http://eureka2:7002/eureka/,http://eureka3:7003/eureka/
+turbine:
+  #指定收集路径
+  instanceUrlSuffix:
+    default: /hystrix.stream
+  #指定了需要收集监控信息的服务名，多个以“,”进行区分
+  app-config: provider
+  # 指定集群名称,若为default则为默认集群，多个集群则通过此配置区分
+  cluster-name-expression: "'default'"
+  #此配置默认为false，则服务是以host进行区分，若设置为true则以host+port进行区分
+  combine-host-port: true
+
+
