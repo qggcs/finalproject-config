@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: dashboard
+  profiles:
+    active: dev
+server:
+  port: 9001
